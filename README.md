@@ -29,6 +29,18 @@ Aplikace zachycuje video z webkamery a pomocí neuronových sítí detekuje pozi
 - **Pravá ruka** - Pohyb kurzoru myši a klikání
 - **Tělo** - Skok, dřep a další akce
 
+## Příklady her
+
+Vyzkoušejte Motion Controller s těmito hrami:
+
+### Hry pro klávesnici
+- [Všechny hry pro klávesnici na Poki](https://poki.com/cz/kl%C3%A1vesnice)
+- [Temple Run 2](https://poki.com/cz/g/temple-run-2) - Běžecká hra s ovládáním WASD a skokem
+- [Subway Surfers](https://poki.com/cz/g/subway-surfers) - Klasická endless runner hra
+
+### Hry pro myš
+- [Fruit Ninja](https://poki.com/cz/g/fruit-ninja) - Klikací hra s pohybem myši
+
 ## Hlavní knihovny
 
 ### Počítačové vidění
