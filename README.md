@@ -8,8 +8,8 @@ A gesture-based game controller that uses your webcam and body pose detection to
 **University:** Czech Technical University in Prague (ČVUT)  
 **Year:** 2025  
 **Team Members:**
-- Student Name 1 - [student1@fit.cvut.cz]
-- Student Name 2 - [student2@fit.cvut.cz]
+- Liudmila Taganashkina - [taganliu@fit.cvut.cz]
+- Vladimir Efimov - [efimovla@fit.cvut.cz]
 
 ## Features
 
@@ -29,31 +29,69 @@ The application captures video from your webcam and uses MediaPipe's pose detect
 - **Body Position** - Jump, crouch, and other actions
 - **Gestures** - Special actions based on pose combinations
 
-## Start. Manual Launch via Python
+## Installation
 
-1. **Install Python 3.7+** from [python.org](https://python.org)
+### Prerequisites
+- **Python 3.8+** (recommended: Python 3.8-3.10)
+- **Webcam** connected to your computer
+- **Windows OS** (for DirectInput support)
+
+### Setup Instructions
+
+1. **Install Python 3.8+** from [python.org](https://python.org)
    - ⚠️ Make sure to check "Add Python to PATH" during installation
+   - Verify installation: `python --version`
 
-2. **Install dependencies:**
+2. **Clone or download this repository:**
    ```bash
+   git clone https://github.com/LiudmilaTa/Motion-Controller.git
+   cd Motion-Controller
+   ```
+
+3. **Create a clean virtual environment (recommended):**
+   ```bash
+   python -m venv venv
+   
+   # Activate on Windows:
+   venv\Scripts\activate
+   
+   # Activate on Linux/Mac:
+   source venv/bin/activate
+   ```
+
+4. **Install dependencies:**
+   ```bash
+   # Clean installation (recommended if you had issues)
+   pip install --no-cache-dir -r requirements.txt
+   
+   # Or standard installation:
    pip install -r requirements.txt
    ```
 
-3. **Run the application:**
+5. **Run the application:**
    ```bash
    python app.py
    ```
 
+6. **Controls:**
+   - Press **ESC** to exit
+   - Position yourself in front of the camera
+   - Follow on-screen instructions
+
 ## Requirements
 
-### Software
-- Python 3.7 or newer
-- Dependencies (automatically installed):
-  - opencv-python >= 4.5.0
-  - mediapipe >= 0.8.0
-  - pyautogui >= 0.9.0
-  - pydirectinput >= 1.0.0
-  - numpy >= 1.19.0
+### Tested Configuration
+- **Python:** 3.8
+- **opencv-python:** 4.8.1.78
+- **mediapipe:** 0.10.8
+- **pyautogui:** 0.9.54
+- **pydirectinput:** 1.0.4
+- **numpy:** 1.23.5
+
+### Important Notes
+- ⚠️ **Use a clean virtual environment** to avoid dependency conflicts
+- If you have TensorFlow installed, there might be version conflicts (non-critical)
+- MediaPipe requires specific file structures - clean installation recommended
 
 ## Controls
 
@@ -113,6 +151,38 @@ MIN_TRACKING_CONFIDENCE = 0.5
 ### Camera not detected
 - Check if camera is connected and not used by another application
 - Try running as administrator
+- Verify camera permissions in Windows Settings
+
+### MediaPipe errors or window closes immediately
+**This is the most common issue!** If you see errors like:
+```
+FileNotFoundError: The path does not exist: .../mediapipe/modules/...
+```
+
+**Solution:**
+1. **Uninstall all dependencies:**
+   ```bash
+   pip uninstall opencv-python opencv-contrib-python mediapipe pyautogui pydirectinput numpy -y
+   ```
+
+2. **Clear pip cache:**
+   ```bash
+   pip cache purge
+   ```
+
+3. **Reinstall with exact versions:**
+   ```bash
+   pip install --no-cache-dir -r requirements.txt
+   ```
+
+4. **If still failing, use a fresh virtual environment:**
+   ```bash
+   deactivate  # if in venv
+   rm -rf venv  # or manually delete venv folder
+   python -m venv venv
+   venv\Scripts\activate
+   pip install --no-cache-dir -r requirements.txt
+   ```
 
 ### High CPU usage
 - Reduce camera resolution in `camera_utils.py`
@@ -123,10 +193,14 @@ MIN_TRACKING_CONFIDENCE = 0.5
 - Check if DirectInput is properly initialized
 - Verify PyAutoGUI failsafe is not triggered (move mouse to corner)
 
-### Dependencies installation fails
-- Run command prompt as administrator
-- Update pip: `python -m pip install --upgrade pip`
-- Install dependencies one by one to identify the problematic package
+### Python version issues
+- Use Python 3.8-3.10 (tested and stable)
+- Python 3.11+ might have compatibility issues with some dependencies
+
+### Dependency conflicts
+- Always use a **clean virtual environment**
+- Don't mix with existing TensorFlow/ML installations
+- If you see TensorFlow warnings, they are usually non-critical for this project
 
 ## Technical Details
 
