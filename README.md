@@ -62,17 +62,42 @@ Motion-Controller/
 ├── gesture_controller.py   # Rozpoznávání gest a mapování
 ├── input_helpers.py        # Inicializace vstupního systému
 ├── ui_helpers.py           # Vykreslování UI a vizualizace
+├── build_exe.py            # Skript pro vytvoření EXE souboru
 └── requirements.txt        # Python závislosti
 ```
 
 ## Instalace
 
-### Požadavky
+### Možnost 1: Rychlý start (EXE soubor)
+
+1. **Stáhněte** `MotionController.exe`
+2. **Spusťte** dvojklikem na soubor
+3. **Připojte** webkameru a začněte hrát!
+
+*První spuštění může trvat dele, je to normální.*
+
+### Možnost 2: Vytvoření vlastního EXE
+
+Pokud chcete vytvořit vlastní EXE soubor:
+
+```bash
+# Nainstalujte závislosti
+pip install -r requirements.txt
+
+# Spusťte build skript
+python build_exe.py
+```
+
+EXE soubor najdete ve složce `dist/MotionController.exe`.
+
+### Možnost 3: Instalace z kódu (pro vývojáře)
+
+**Požadavky:**
 - Python 3.8-3.10
 - Webkamera
 - Windows OS (pro podporu DirectInput)
 
-### Postup instalace
+**Postup:**
 
 1. **Vytvořte virtuální prostředí:**
    ```bash
