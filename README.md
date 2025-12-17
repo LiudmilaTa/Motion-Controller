@@ -68,15 +68,7 @@ Motion-Controller/
 
 ## Instalace
 
-### Možnost 1: Rychlý start (EXE soubor)
-
-1. **Stáhněte** `MotionController.exe`
-2. **Spusťte** dvojklikem na soubor
-3. **Připojte** webkameru a začněte hrát!
-
-*První spuštění může trvat dele, je to normální.*
-
-### Možnost 2: Vytvoření vlastního EXE
+### Možnost 1: Vytvoření vlastního EXE
 
 Pokud chcete vytvořit vlastní EXE soubor:
 
@@ -90,7 +82,7 @@ python build_exe.py
 
 EXE soubor najdete ve složce `dist/MotionController.exe`.
 
-### Možnost 3: Instalace z kódu (pro vývojáře)
+### Možnost 2: Instalace z kódu (pro vývojáře)
 
 **Požadavky:**
 - Python 3.8-3.10
@@ -132,6 +124,9 @@ EXE soubor najdete ve složce `dist/MotionController.exe`.
 | Pravá ruka | U těla | Levé kliknutí |
 | Tělo | Skok | Mezerník |
 
+![Instructions](assets/instructions.png)
+*Manuál ovládání*
+
 ## Konfigurace
 
 Nastavení lze upravit v souboru [config.py](config.py):
@@ -170,11 +165,5 @@ pip uninstall opencv-python mediapipe -y
 pip cache purge
 pip install --no-cache-dir -r requirements.txt
 ```
-
-## Licence
-
-Projekt vytvořen pro vzdělávací účely v rámci předmětu NI-CCC na ČVUT.
-
 ---
-
 *Vytvořeno v rámci projektu NI-CCC, České vysoké učení technické v Praze, 2025*
